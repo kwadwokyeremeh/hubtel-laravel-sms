@@ -5,6 +5,7 @@ namespace NotificationChannels\Hubtel;
 use Illuminate\Notifications\Notification;
 use NotificationChannels\Hubtel\Exceptions\CouldNotSendNotification;
 use NotificationChannels\Hubtel\SMSClients\HubtelSMSClient;
+use Psr\Http\Message\ResponseInterface;
 
 class HubtelChannel
 {
@@ -13,6 +14,9 @@ class HubtelChannel
      */
     public $client;
 
+    /**
+     * @param HubtelSMSClient $client
+     */
     public function __construct(HubtelSMSClient $client)
     {
         $this->client = $client;
@@ -22,11 +26,12 @@ class HubtelChannel
      * Send the given notification.
      *
      * @param mixed $notifiable
-     * @param \Illuminate\Notifications\Notification $notification
+     * @param Notification $notification
      *
+     * @return ResponseInterface
      * @throws CouldNotSendNotification
      */
-    public function send($notifiable, Notification $notification)
+    public function send($notifiable, Notification $notification): ResponseInterface
     {
         $message = $notification->toSMS($notifiable);
 

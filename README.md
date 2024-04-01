@@ -1,10 +1,10 @@
-# Hubtel notification channel for Laravel 5.3+
+# Hubtel notification channel for Laravel 11+
 
 [![Latest Stable Version](https://poser.pugx.org/norris1z/hubtel-laravel-sms-channel/v/stable)](https://packagist.org/packages/norris1z/hubtel-laravel-sms-channel)
 [![Total Downloads](https://poser.pugx.org/norris1z/hubtel-laravel-sms-channel/downloads)](https://packagist.org/packages/norris1z/hubtel-laravel-sms-channel)
 [![License](https://poser.pugx.org/norris1z/hubtel-laravel-sms-channel/license)](https://packagist.org/packages/norris1z/hubtel-laravel-sms-channel)
 
-This package makes it easy to send notifications using [Hubtel](https://hubtel.com) with Laravel 5.3+.
+This package makes it easy to send notifications using [Hubtel](https://hubtel.com) with Laravel 11+.
 
 ## Contents
 

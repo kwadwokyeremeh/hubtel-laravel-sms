@@ -4,12 +4,18 @@ namespace NotificationChannels\Hubtel\Exceptions;
 
 class InvalidConfiguration extends \Exception
 {
-    public static function apiKeyNotSet()
+    /**
+     * @return static
+     */
+    public static function apiKeyNotSet(): static
     {
         return new static('Hubtel API key not set');
     }
 
-    public static function apiSecretNotSet()
+    /**
+     * @return static
+     */
+    public static function apiSecretNotSet(): static
     {
         return new static ('Hubtel API secret not set');
     }

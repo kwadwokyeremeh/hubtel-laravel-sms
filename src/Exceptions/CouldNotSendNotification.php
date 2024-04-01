@@ -4,17 +4,26 @@ namespace NotificationChannels\Hubtel\Exceptions;
 
 class CouldNotSendNotification extends \Exception
 {
-    public static function recipientNotSetError()
+    /**
+     * @return static
+     */
+    public static function recipientNotSetError(): static
     {
         return new static('Recipient phone number not set');
     }
 
-    public static function senderNotSetError()
+    /**
+     * @return static
+     */
+    public static function senderNotSetError(): static
     {
         return new static('Sender phone number not set');
     }
 
-    public static function contentNotSetError()
+    /**
+     * @return static
+     */
+    public static function contentNotSetError(): static
     {
         return new static('Message content empty');
     }

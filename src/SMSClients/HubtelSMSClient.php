@@ -8,12 +8,26 @@ use NotificationChannels\Hubtel\HubtelMessage;
 
 class HubtelSMSClient
 {
-    public $client;
+    /**
+     * @var Client
+     */
+    public Client $client;
 
-    public $apiKey;
+    /**
+     * @var string
+     */
+    public string $apiKey;
 
-    public $apiSecret;
+    /**
+     * @var string
+     */
+    public string $apiSecret;
 
+    /**
+     * @param $apiKey
+     * @param $apiSecret
+     * @param Client $client
+     */
     public function __construct($apiKey, $apiSecret, Client $client)
     {
         $this->apiKey = $apiKey;
@@ -21,17 +35,29 @@ class HubtelSMSClient
         $this->client = $client;
     }
 
-    public function send(HubtelMessage $message)
+    /**
+     * @param HubtelMessage $message
+     * @return \Psr\Http\Message\ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function send(HubtelMessage $message): \Psr\Http\Message\ResponseInterface
     {
         return $this->client->get($this->getApiURL().$this->buildMessage($message, $this->apiKey, $this->apiSecret));
     }
 
-    public function getApiURL()
+    public function getApiURL(): string
     {
         return 'https://smsc.hubtel.com/v1/messages/send?';
     }
 
-    public function buildMessage(HubtelMessage $message, $apiKey, $apiSecret)
+    /**
+     * @param HubtelMessage $message
+     * @param $apiKey
+     * @param $apiSecret
+     * @return string
+     * @throws InvalidConfiguration
+     */
+    public function buildMessage(HubtelMessage $message, $apiKey, $apiSecret): string
     {
         $this->validateConfig($apiKey, $apiSecret);
 
@@ -46,7 +72,13 @@ class HubtelSMSClient
         return http_build_query($params);
     }
 
-    public function validateConfig($apiKey, $apiSecret)
+    /**
+     * @param $apiKey
+     * @param $apiSecret
+     * @return $this
+     * @throws InvalidConfiguration
+     */
+    public function validateConfig($apiKey, $apiSecret): static
     {
         if (is_null($apiKey)) {
             throw InvalidConfiguration::apiKeyNotSet();

@@ -11,7 +11,7 @@ class HubtelServiceProvider extends ServiceProvider
     /**
      * Bootstrap the application services.
      */
-    public function boot()
+    public function boot(): void
     {
         $this->publishes([
             __DIR__.'/config/hubtel.php' => config_path('hubtel.php'),

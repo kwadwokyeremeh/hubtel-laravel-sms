@@ -1,24 +1,24 @@
 {
-    "name": "norris1z/hubtel-laravel-sms-channel",
+    "name": "kwadwokyeremeh/hubtel-laravel-sms",
     "description": "Hubtel SMS Channel for Laravel 5.3+",
     "homepage": "https://github.com/norris1z/hubtel-laravel-sms-channel",
     "license": "MIT",
     "authors": [
         {
-            "name": "Norris Oduro Tei",
-            "email": "norrisjibril@gmail.com",
+            "name": "Kwadwo Kyeremeh",
+            "email": "kyerematics@gmail.com",
             "homepage": "https://norrisoduro.carrd.co",
             "role": "Explicit coder at Volatile"
         }
     ],
     "require": {
         "php": ">=8.2",
-        "guzzlehttp/guzzle": "^7.2",
-        "illuminate/notifications": "5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|6.*|7.*|8.*",
-        "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|6.*|7.*|8.*"
+        "guzzlehttp/guzzle": "^7.8",
+        "illuminate/notifications": "11.*",
+        "illuminate/support": "11.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.5"
+        "phpunit/phpunit": "^11.0"
     },
     "autoload": {
         "psr-4": {

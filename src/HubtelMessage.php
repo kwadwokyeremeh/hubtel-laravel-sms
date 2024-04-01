@@ -8,56 +8,56 @@ class HubtelMessage
      * Sender's phone number.
      * @var string
      */
-    public $from;
+    public mixed $from;
 
     /**
      * Recipient phone number.
      * @var string
      */
-    public $to;
+    public mixed $to;
 
     /**
      * Message.
      * @var string
      */
-    public $content;
+    public mixed $content;
 
     /**
      *Indicate a delivery report request.
      *@var bool
      */
-    public $registeredDelivery;
+    public bool $registeredDelivery;
 
     /**
      *The Reference Number provided by the Client
      *prior to sending the message.
      *@var int
      */
-    public $clientReference;
+    public int $clientReference;
 
     /**
      * Indicates the type of message to be sent.
      *@var int
      */
-    public $type;
+    public int $type;
 
     /**
      *The User Data Header of the SMS Message being sent.
      *@var string
      */
-    public $udh;
+    public string $udh;
 
     /**
      *Indicates when to send the message.
      *@var mixed
      */
-    public $time;
+    public mixed $time;
 
     /**
      *Indicates if this message must be sent as a flash message.
      *@var bool
      */
-    public $flashMessage;
+    public bool $flashMessage;
 
     public function __construct($from = null, $to = null, $content = null)
     {
@@ -71,7 +71,7 @@ class HubtelMessage
      * @param string $from
      * @return $this
      */
-    public function from($from)
+    public function from(string $from): static
     {
         $this->from = $from;
 
@@ -83,7 +83,7 @@ class HubtelMessage
      * @param string $to
      * @return $this
      */
-    public function to($to)
+    public function to(string $to): static
     {
         $this->to = $to;
 
@@ -95,7 +95,7 @@ class HubtelMessage
      * @param string $content
      * @return $this
      */
-    public function content($content)
+    public function content(string $content): static
     {
         $this->content = $content;
 
@@ -106,7 +106,7 @@ class HubtelMessage
      *Set delivery report status.
      * @return $this
      */
-    public function registeredDelivery()
+    public function registeredDelivery(): static
     {
         $this->registeredDelivery = 'true';
 
@@ -118,7 +118,7 @@ class HubtelMessage
      * @param int $reference
      * @return $this
      */
-    public function clientReference($reference)
+    public function clientReference(int $reference): static
     {
         $this->clientReference = $reference;
 
@@ -130,7 +130,7 @@ class HubtelMessage
      * @param int $type
      * @return $this
      */
-    public function type($type)
+    public function type(int $type): static
     {
         $this->type = $type;
 
@@ -142,7 +142,7 @@ class HubtelMessage
      * @param string $udh
      * @return $this
      */
-    public function udh($udh)
+    public function udh(string $udh): static
     {
         $this->udh = $udh;
 
@@ -154,7 +154,7 @@ class HubtelMessage
      * @param mixed $time
      * @return $this
      */
-    public function time($time)
+    public function time(mixed $time): static
     {
         $this->time = $time;
 
@@ -165,7 +165,7 @@ class HubtelMessage
      * Set message as a flash message.
      * @return $this
      */
-    public function flashMessage()
+    public function flashMessage(): static
     {
         $this->flashMessage = 'true';
 
