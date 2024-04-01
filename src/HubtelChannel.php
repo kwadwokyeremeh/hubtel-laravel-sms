@@ -12,7 +12,7 @@ class HubtelChannel
     /**
      * @var HubtelSMSClient
      */
-    public $client;
+    public HubtelSMSClient $client;
 
     /**
      * @param HubtelSMSClient $client
@@ -29,9 +29,9 @@ class HubtelChannel
      * @param Notification $notification
      *
      * @return ResponseInterface
-     * @throws CouldNotSendNotification
+     * @throws CouldNotSendNotification|\GuzzleHttp\Exception\GuzzleException
      */
-    public function send($notifiable, Notification $notification): ResponseInterface
+    public function send(mixed $notifiable, Notification $notification): ResponseInterface
     {
         $message = $notification->toSMS($notifiable);
 
