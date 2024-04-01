@@ -22,16 +22,28 @@ This package makes it easy to send notifications using [Hubtel](https://hubtel.c
 
 ## Installation
 
-To get the latest version of Hubtel Notification channel for Laravel 5.3+, simply require the project using [Composer](https://getcomposer.org):
+To get the latest version of Hubtel Notification channel for Laravel 11+, simply require the project using [Composer](https://getcomposer.org):
 
-```bash
-$ composer require norris1z/hubtel-laravel-sms-channel
+Add this to your composer.json
 ```
-
-If you use Laravel 5.5+ you don't need the following step.
-If not, once package is installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
-
-* `NotificationChannels\Hubtel\HubtelServiceProvider::class`
+    "repositories": {
+            "hubtel-laravel-sms": {
+                "type": "package",
+                "package": {
+                    "name": "kwadwokyeremeh/hubtel-laravel-sms",
+                    "version": "1.0",
+                    "source": {
+                        "url": "https://github.com/kwadwokyeremeh/hubtel-laravel-sms.git",
+                        "type": "git",
+                        "reference": "origin/master"
+                    }
+                }
+            }
+        },
+```
+```bash
+$ composer require kwadwokyeremeh/hubtel-laravel-sms
+```
 
 
 ### Setting up the Hubtel service
