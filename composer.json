@@ -6,9 +6,7 @@
     "authors": [
         {
             "name": "Kwadwo Kyeremeh",
-            "email": "kyerematics@gmail.com",
-            "homepage": "https://norrisoduro.carrd.co",
-            "role": "Explicit coder at Volatile"
+            "email": "kyerematics@gmail.com"
         }
     ],
     "require": {
