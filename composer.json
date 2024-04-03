@@ -42,5 +42,7 @@
                 "NotificationChannels\\Hubtel\\HubtelServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
