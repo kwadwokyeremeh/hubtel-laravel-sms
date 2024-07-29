@@ -49,4 +49,14 @@ class HubtelServiceProvider extends ServiceProvider implements DeferrableProvide
             'hubtel-sms'
         );
     }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array<int, string>
+     */
+    public function provides(): array
+    {
+        return [HubtelChannel::class];
+    }
 }
