@@ -130,6 +130,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 ## Credits
 
 - [Norris Oduro Tei](https://github.com/Norris1z)
+- [Kwadwo Kyeremeh Tuffour](https://github.com/kwadwokyeremeh)
 - [All Contributors](../../contributors)
 
 ## License
