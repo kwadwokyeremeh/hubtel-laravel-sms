@@ -4,9 +4,6 @@
  */
 
 return [
-    'account' => [
-        'key' => env('HUBTEL_API_KEY'),
-        'secret' => env('HUBTEL_API_SECRET'),
-    ],
-
+    'api_key' => env('HUBTEL_API_KEY'),
+    'api_secret' => env('HUBTEL_API_SECRET'),
 ];

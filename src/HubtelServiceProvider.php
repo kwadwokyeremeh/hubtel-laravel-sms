@@ -19,11 +19,12 @@ class HubtelServiceProvider extends ServiceProvider implements DeferrableProvide
         $this->app->when(HubtelChannel::class)
             ->needs(HubtelSMSClient::class)
             ->give(function () {
-                $config = config('hubtel-sms.account');
+                $apiKey = config('hubtel-sms.api_key');
+                $apiSecret = config('hubtel-sms.api_secret');
 
                 return new HubtelSMSClient(
-                    $config['key'],
-                    $config['secret'],
+                    $apiKey,
+                    $apiSecret,
                     new Client
                 );
             });
