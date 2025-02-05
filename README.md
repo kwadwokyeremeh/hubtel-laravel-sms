@@ -26,20 +26,41 @@ To get the latest version of Hubtel Notification channel for Laravel 11+, simply
 
 Add this to your composer.json
 ```
-    "repositories": {
-            "hubtel-laravel-sms": {
-                "type": "package",
-                "package": {
-                    "name": "kwadwokyeremeh/hubtel-laravel-sms",
-                    "version": "1.0",
-                    "source": {
-                        "url": "https://github.com/kwadwokyeremeh/hubtel-laravel-sms.git",
-                        "type": "git",
-                        "reference": "origin/master"
+    "repositories": [
+         {
+            "type": "package",
+            "package": {
+                "name": "kwadwokyeremeh/hubtel-laravel-sms",
+                "version": "1.4",
+                "source": {
+                    "url": "https://github.com/kwadwokyeremeh/hubtel-laravel-sms.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/kwadwokyeremeh/hubtel-laravel-sms/archive/refs/heads/master.zip",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "psr-4": {
+                        "NotificationChannels\\Hubtel\\": "vendor/kwadwokyeremeh/hubtel-laravel-sms/src/"
                     }
+                },
+                "extra": {
+                    "laravel": {
+                        "providers": [
+                            "NotificationChannels\\Hubtel\\HubtelServiceProvider"
+                        ]
+                    }
+                },
+                "config": {
+                    "sort-packages": true
                 }
             }
-        },
+         },
+        
+    ],
 ```
 ```bash
 $ composer require kwadwokyeremeh/hubtel-laravel-sms
@@ -58,10 +79,8 @@ This creates a `hubtel.php` file in your `config` directory.
 
 Paste your apiCredentials in the `config/hubtel.php` configuration file. You may copy the example configuration below to get started:
 ```php
-'account' => [
-        'key' => env('HUBTEL_API_KEY'),
-        'secret' => env('HUBTEL_API_SECRET')
-]
+        'api_key' => env('HUBTEL_API_KEY'),
+        'api_secret' => env('HUBTEL_API_SECRET')
 ```
 
 Or 
