@@ -33,6 +33,7 @@ Add this to your composer.json
         },
     ],
 ```
+Run from your terminal
 ```bash
 $ composer require kwadwokyeremeh/hubtel-laravel-sms
 ```
@@ -46,17 +47,17 @@ In your terminal run
 ```bash
 $ php artisan vendor:publish --provider="NotificationChannels\Hubtel\HubtelServiceProvider"
 ```
-This creates a `hubtel.php` file in your `config` directory.
+This creates a `hubtel-sms.php` file in your `config` directory.
 
 Paste your apiCredentials in the `config/hubtel.php` configuration file. You may copy the example configuration below to get started:
 ```php
-        'api_key' => env('HUBTEL_API_KEY'),
-        'api_secret' => env('HUBTEL_API_SECRET')
+        'api_key' => env('HUBTEL_CLIENT_ID'),
+        'api_secret' => env('HUBTEL_CLIENT_SECRET')
 ```
 
 Or 
 
-Add the `HUBTEL_API_KEY` and `HUBTEL_API_SECRET` to your `.env` file
+Add the `HUBTEL_CLIENT_ID` and `HUBTEL_CLIENT_SECRET` to your `.env` file
 
 ## Usage
 
