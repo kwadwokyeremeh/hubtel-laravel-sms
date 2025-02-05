@@ -20,12 +20,12 @@
     },
     "autoload": {
         "psr-4": {
-            "NotificationChannels\\Hubtel\\": "src"
+            "NotificationChannels\\Hubtel\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "NotificationChannels\\Hubtel\\Test\\": "tests"
+            "NotificationChannels\\Hubtel\\Test\\": "tests/"
         }
     },
     "scripts": {
