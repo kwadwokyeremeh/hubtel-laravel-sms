@@ -3,6 +3,11 @@
     "description": "Hubtel SMS Channel for Laravel ^11",
     "homepage": "https://github.com/norris1z/hubtel-laravel-sms-channel",
     "license": "MIT",
+    "keywords": [
+        "laravel",
+        "sms",
+        "hubtel"
+    ],
     "authors": [
         {
             "name": "Kwadwo Kyeremeh",

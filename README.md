@@ -27,39 +27,10 @@ To get the latest version of Hubtel Notification channel for Laravel 11+, simply
 Add this to your composer.json
 ```
     "repositories": [
-         {
-            "type": "package",
-            "package": {
-                "name": "kwadwokyeremeh/hubtel-laravel-sms",
-                "version": "1.4",
-                "source": {
-                    "url": "https://github.com/kwadwokyeremeh/hubtel-laravel-sms.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/kwadwokyeremeh/hubtel-laravel-sms/archive/refs/heads/master.zip",
-                    "reference": "master"
-                },
-                "autoload": {
-                    "psr-4": {
-                        "NotificationChannels\\Hubtel\\": "vendor/kwadwokyeremeh/hubtel-laravel-sms/src/"
-                    }
-                },
-                "extra": {
-                    "laravel": {
-                        "providers": [
-                            "NotificationChannels\\Hubtel\\HubtelServiceProvider"
-                        ]
-                    }
-                },
-                "config": {
-                    "sort-packages": true
-                }
-            }
-         },
-        
+        {
+            "type": "vcs",
+            "url": "https://github.com/kwadwokyeremeh/hubtel-laravel-sms.git"
+        },
     ],
 ```
 ```bash
