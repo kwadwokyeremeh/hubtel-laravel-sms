@@ -39,6 +39,7 @@ class HubtelSMSClient
      * @param HubtelMessage $message
      * @return \Psr\Http\Message\ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws InvalidConfiguration
      */
     public function send(HubtelMessage $message): \Psr\Http\Message\ResponseInterface
     {
