@@ -6,12 +6,20 @@
     "keywords": [
         "laravel",
         "sms",
-        "hubtel"
+        "hubtel",
+        "query-sms",
+        "serenity"
     ],
     "authors": [
         {
             "name": "Kwadwo Kyeremeh",
             "email": "kyerematics@gmail.com"
+        },
+        {
+            "name": "Norris Oduro Tei",
+            "email": "norrisjibril@gmail.com",
+            "homepage": "https://norrisoduro.carrd.co",
+            "role": "Explicit coder at Volatile"
         }
     ],
     "require": {
