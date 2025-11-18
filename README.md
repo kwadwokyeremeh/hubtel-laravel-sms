@@ -12,6 +12,7 @@ This package makes it easy to send notifications using [Hubtel](https://hubtel.c
 	- [Setting up the Hubtel service](#setting-up-the-hubtel-service)
 - [Usage](#usage)
 	- [Available Message methods](#available-message-methods)
+- [Testing the Integration](#testing-the-integration)
 - [Querying Message Status](#querying-message-status)
 - [Changelog](#changelog)
 - [Testing](#testing)
@@ -99,11 +100,39 @@ public function routeNotificationForSMS()
 * `time($time)` : set the time to deliver the message
 * `flashMessage()` : sends the message as a flash message
 
-Read more about the avialablemethods on the [Hubtel Documentation Page](https://developers.hubtel.com/documentations/sendmessage)
+Read more about the available methods on the [Hubtel Documentation Page](https://developers.hubtel.com/documentations/sendmessage)
+
+## Testing the Integration
+
+You can test your Hubtel SMS integration using the built-in Artisan command:
+
+```bash
+php artisan hubtel-sms:test +1234567890 --from="SenderName" --message="Your test message here"
+```
+
+### Command Arguments and Options:
+
+* `to` - Required. The recipient phone number
+* `--from` - Optional. The sender ID/name (defaults to config value or 'Laravel')
+* `--message` - Optional. Custom message content (defaults to a standard test message)
+
+### Prerequisites:
+
+1. Configure Hubtel API credentials in your `.env` file:
+   ```
+   HUBTEL_CLIENT_ID=your_client_id
+   HUBTEL_CLIENT_SECRET=your_client_secret
+   ```
+
+2. Publish the config file (if not already done):
+   ```
+   php artisan vendor:publish --tag=hubtel-sms-config
+   ```
 
 ## Querying Message Status
 
 The package now supports querying the status of sent messages. You can check the delivery status of a message using the `HubtelStatusChecker`:
+
 ```php
     use NotificationChannels\Hubtel\SMSClients\HubtelStatusChecker; 
     use GuzzleHttp\Client;
@@ -116,6 +145,15 @@ The package now supports querying the status of sent messages. You can check the
     $response->getStatus(); 
     $response->getUpdateTime();
 ```
+
+You can also check message status using the built-in Artisan command:
+
+```bash
+php artisan hubtel-sms:status message-id-here
+```
+
+This command will display detailed information about the message including delivery status, recipient, content, and delivery time.
+
 ## Changelog
 
 ## Latest Notice 

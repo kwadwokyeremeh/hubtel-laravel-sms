@@ -30,6 +30,13 @@ class HubtelServiceProvider extends ServiceProvider implements DeferrableProvide
                     $usePostMethod,
                 );
             });
+            
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                Commands\SendTestSMSCommand::class,
+                Commands\CheckSMSStatusCommand::class,
+            ]);
+        }
     }
 
     public function register():void
