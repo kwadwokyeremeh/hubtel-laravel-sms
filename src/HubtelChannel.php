@@ -4,6 +4,7 @@ namespace NotificationChannels\Hubtel;
 
 use Illuminate\Notifications\Notification;
 use NotificationChannels\Hubtel\Exceptions\CouldNotSendNotification;
+use NotificationChannels\Hubtel\Exceptions\InvalidConfiguration;
 use NotificationChannels\Hubtel\SMSClients\HubtelSMSClient;
 use Psr\Http\Message\ResponseInterface;
 
@@ -30,6 +31,7 @@ class HubtelChannel
      *
      * @return ResponseInterface
      * @throws CouldNotSendNotification|\GuzzleHttp\Exception\GuzzleException
+     * @throws InvalidConfiguration
      */
     public function send(mixed $notifiable, Notification $notification): ResponseInterface
     {
