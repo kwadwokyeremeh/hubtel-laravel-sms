@@ -90,7 +90,7 @@ public function routeNotificationForSMS()
 
 ### Available Message methods
 
-* `from($from)` : set thesender's name or phone number
+* `from($from)` : set the sender's name or phone number
 * `to($to)` : set the recipient's phone number
 * `content($content)` : set the message content
 * `registeredDelivery()` : set delivery report request
