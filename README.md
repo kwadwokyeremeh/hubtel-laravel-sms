@@ -25,15 +25,7 @@ This package makes it easy to send notifications using [Hubtel](https://hubtel.c
 
 To get the latest version of Hubtel Notification channel for Laravel 11+, simply require the project using [Composer](https://getcomposer.org):
 
-Add this to your composer.json
-```
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/kwadwokyeremeh/hubtel-laravel-sms.git"
-        },
-    ],
-```
+
 Run from your terminal
 ```bash
 $ composer require kwadwokyeremeh/hubtel-laravel-sms
